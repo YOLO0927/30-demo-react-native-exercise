@@ -1,6 +1,6 @@
 #####  本项目未来将会有 30 个 demo 去学习如何使用 react-native 0.57 的原生组件、 react-native navigation 等相关第三方组件，由于我暂时是使用 windows 来开发，所以只能打包 apk，一个月后我将会使用 macOs 来开发，到时候会想办法将 app 打包出来。
 
-####  The project will have 30 demos for study how to use react-native build a available application and learn use react-native's meterial compoennt、 react-native navigation、 relevant the third part component and so on in the development process。
+####  The project will have 30 demos for study how to use react-native build a available application and learn use react-native's meterial component、 react-native navigation、 relevant the third part component and so on in the development process。
 
 ######  The test android apk is located in /android/app/build/outputs/apk/release/app-release.apk
 
