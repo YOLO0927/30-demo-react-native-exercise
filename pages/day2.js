@@ -17,7 +17,7 @@ class Weather extends Component {
 
   componentDidMount () {
     if (Platform.OS === 'ios') {
-      StatusBar.setBarStyle('1')
+      StatusBar.setBarStyle('light-content')
     }
   }
 
@@ -170,7 +170,7 @@ Weather.propTypes = {
 class Day2 extends Component {
   _back () {
     this.props.navigation.pop()
-    StatusBar.setBarStyle('0')
+    StatusBar.setBarStyle('default')
   }
 
   render () {
