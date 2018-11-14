@@ -28,7 +28,7 @@ class Entrance extends Component {
       {
         toValue: 50,
         duration: 1200,
-        delay: 2000,
+        delay: 1000,
         easing: Easing.elastic(2)
       }
     ).start()
@@ -38,12 +38,12 @@ class Entrance extends Component {
         toValue: 0,
         duration: 800,
         easing: Easing.elastic(1),
-        delay: 2200
+        delay: 1200
       }
     ).start()
     setTimeout(() => {
       this.props.hideThis()
-    }, 3300)
+    }, 2300)
   }
 
   render () {
@@ -60,34 +60,52 @@ Entrance.propTypes = {
 }
 
 class TwitterPost extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
-      isRefreshing: false
+      isRefreshing: false,
+      timeArr: [String(new Date())]
     }
   }
 
   _onRefresh () {
+    console.log(123)
     this.setState({
       isRefreshing: true
     })
     setTimeout(() => {
+      this.setState({
+        timeArr: [
+          ...this.state.timeArr,
+          String(new Date())
+        ]
+      })
       this.setState({
         isRefreshing: false
       })
     }, 1000)
   }
 
+  _onScroll (e) {
+    console.log(e.nativeEvent.contentOffset.y)
+  }
+
   render () {
+    const timeTexts = this.state.timeArr.map((time, index) => {
+      return (<Text key={ index }>{ time }</Text>)
+    })
     return (
       <ScrollView
-        RefreshControl={
+        style={{ marginBottom: 40 }}
+        onScroll={ (e) => this._onScroll(e) }
+        refreshControl={
           <RefreshControl
             refreshing={ this.state.isRefreshing }
-            onRefresh={ () => this._onRefresh }
+            onRefresh={ () => this._onRefresh() }
             tintColor="#ddd"/>
         }>
-        <Image source={require('../public/img/day3.png')} style={{ width: Util.size.width, height: Util.size.height - 110 }}></Image>
+        <Image source={require('../public/img/day3.png')} style={{ width: Util.size.width, height: Util.size.height - 120 }}></Image>
+        { timeTexts }
       </ScrollView>
     )
   }

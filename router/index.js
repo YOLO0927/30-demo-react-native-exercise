@@ -8,19 +8,15 @@ import Setting from '../pages/setting'
 import Day1 from '../pages/day1'
 import Day2 from '../pages/day2'
 import Day3 from '../pages/day3'
+import Day4 from '../pages/day4'
+import Day5 from '../pages/day5'
+import Day6 from '../pages/day6'
 
 const styles = StyleSheet.create({
-  navBackBtn: {
-    paddingLeft: 10,
-    color: "#555",
-    width: 30,
-    textAlign: 'center'
-  },
   navTitle: {
     flex: 1,
     alignItems: 'center',
-    position: 'relative',
-    left: -20
+    position: 'relative'
   }
 })
 
@@ -28,9 +24,12 @@ const HomeStack = createStackNavigator({
   Home: Home,
   Day1: Day1,
   Day2: Day2,
-  Day3: Day3
+  Day3: Day3,
+  Day4: Day4,
+  Day5: Day5,
+  Day6: Day6
 }, {
-  // initialRouteName: 'Day2',
+  // initialRouteName: 'Day3',
   navigationOptions: ({ navigation }) => ({
     headerTitle: (route) => {
       return (
@@ -38,21 +37,6 @@ const HomeStack = createStackNavigator({
           <Text style={{ fontSize: 18, fontWeight: "500" }}>{ navigation.state.params.title || '测试demo' }</Text>
         </View>
       )
-    },
-    headerLeft: (route) => {
-      if (navigation.state.params && navigation.state.params.index > 0) {
-        return (
-          <TouchableOpacity
-            underlayColor='transparent'
-            onPress={() => {navigation.pop()}}>
-            <Text style={ styles.navBackBtn }>
-              <Icon size={20} name="ios-arrow-back" />
-            </Text>
-          </TouchableOpacity>
-        )
-      } else {
-        return null
-      }
     }
   })
 })

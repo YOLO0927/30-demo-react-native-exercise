@@ -19,6 +19,9 @@ import Swiper from 'react-native-swiper'
 import Day1 from './day1'
 import Day2 from './day2'
 import Day3 from './day3'
+import Day4 from './day4'
+import Day5 from './day5'
+import Day6 from './day6'
 
 export default class Home extends Component {
   constructor () {
@@ -54,6 +57,36 @@ export default class Home extends Component {
           size: 48,
           color: '#ff856c',
           hideNav: false
+        },
+        {
+          key: 3,
+          title: 'cocoapods',
+          component: Day4,
+          isFA: true,
+          icon: 'contao',
+          size: 50,
+          color: '#FF9A05',
+          hideNav: false
+        },
+        {
+          key: 4,
+          title: 'find my location',
+          component: Day5,
+          isFA: false,
+          icon: 'md-pin',
+          size: 50,
+          color: '#00D204',
+          hideNav: false
+        },
+        {
+          key: 5,
+          title: 'Spotify',
+          component: Day6,
+          isFA: true,
+          icon: 'spotify',
+          size: 50,
+          color: '#777',
+          hideNav: true
         }
       ]
     }
@@ -80,7 +113,7 @@ export default class Home extends Component {
           >
           <View style={ styles.boxContainer }>
             <Text style={ styles.boxText }>Day{index + 1}</Text>
-            { elem.isFA ? <IconFA size={ ele.size } name={ ele.icon } style={[ styles.boxIcon, { color: elem.color } ]}></IconFA> :
+            { elem.isFA ? <IconFA size={ elem.size } name={ elem.icon } style={[ styles.boxIcon, { color: elem.color } ]}></IconFA> :
               <Icon size={ elem.size } name={ elem.icon } style={[ styles.boxIcon, { color: elem.color } ]}></Icon> }
           </View>
         </TouchableHighlight>
@@ -92,7 +125,7 @@ export default class Home extends Component {
           height={ 150 }
           showsButtons={ false }
           autoplay={ true }
-          autoplayTimeout={ 5 }
+          autoplayTimeout={ 3 }
           activeDot={<View style={ styles.dot }></View>}>
           <TouchableHighlight onPress={ () => onThis._jumpToDay(0) }>
             <View style={ styles.slide }>
