@@ -16,12 +16,6 @@ import Util from '../public/utils'
 import Icon from 'react-native-vector-icons/Ionicons'
 import IconFA from 'react-native-vector-icons/FontAwesome'
 import Swiper from 'react-native-swiper'
-import Day1 from './day1'
-import Day2 from './day2'
-import Day3 from './day3'
-import Day4 from './day4'
-import Day5 from './day5'
-import Day6 from './day6'
 
 export default class Home extends Component {
   constructor () {
@@ -31,73 +25,103 @@ export default class Home extends Component {
         {
           key: 0,
           title: 'A stopwatch',
-          component: Day1,
           isFA: false,
           icon: 'ios-stopwatch',
           size: 48,
           color: '#ff856c',
-          hideNav: false
+          hideNav: false,
+          complete: true
         },
         {
           key: 1,
           title: 'A weather app',
-          component: Day2,
           isFA: false,
           icon: 'ios-partly-sunny',
           size: 48,
           color: '#ff856c',
-          hideNav: false
+          hideNav: false,
+          complete: true
         },
         {
           key: 2,
           title: 'twitter',
-          component: Day3,
           isFA: false,
           icon: 'logo-twitter',
           size: 48,
           color: '#ff856c',
-          hideNav: false
+          hideNav: false,
+          complete: true
         },
         {
           key: 3,
           title: 'cocoapods',
-          component: Day4,
           isFA: true,
           icon: 'contao',
           size: 50,
           color: '#FF9A05',
-          hideNav: false
+          hideNav: false,
+          complete: false
         },
         {
           key: 4,
           title: 'find my location',
-          component: Day5,
           isFA: false,
           icon: 'md-pin',
           size: 50,
           color: '#00D204',
-          hideNav: false
+          hideNav: false,
+          complete: true
         },
         {
           key: 5,
           title: 'Spotify',
-          component: Day6,
           isFA: true,
           icon: 'spotify',
           size: 50,
           color: '#777',
-          hideNav: true
+          hideNav: true,
+          complete: false
+        },
+        {
+          key:6,
+          title:"Moveable Circle",
+          isFA: false,
+          icon: "ios-baseball",
+          size: 50,
+          color:"#5e2a06",
+          hideNav: true,
+          complete: true
+        },
+        {
+          key:7,
+          title:"Swipe Left Menu",
+          isFA: true,
+          icon: "google",
+          size: 50,
+          color:"#4285f4",
+          hideNav: true,
+          complete: false
+        },
+        {
+          key:8,
+          title:"Twitter Parallax View",
+          isFA: true,
+          icon: "twitter-square",
+          size: 50,
+          color:"#2aa2ef",
+          hideNav: true,
+          complete: false
         }
       ]
     }
   }
 
   _jumpToDay (index) {
-    this.props.navigation.push(`Day${index + 1}`, {
+    let navigator = this.state.days[index].complete ? `Day${index + 1}` : 'ComingSoon'
+    this.props.navigation.push(navigator, {
       title: this.state.days[index].title,
       index: index + 1,
-      display: !this.state.days[index].hideNav,
-      component: this.state.days[index].component
+      display: !this.state.days[index].hideNav
     })
   }
 

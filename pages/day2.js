@@ -269,8 +269,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: Util.size.width,
     left: 0,
-    top: 20,
-    height: Util.size.height - 53
+    height: Util.size.height - Util.tabbarHeight - Util.navHeight
   },
   headInfo: {
     paddingTop: 70,

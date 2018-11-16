@@ -5,12 +5,16 @@ import { createStackNavigator, createBottomTabNavigator, createDrawerNavigator, 
 import Home from '../pages/home'
 import Index from '../pages/index'
 import Setting from '../pages/setting'
+import ComingSoon from '../pages/comingsoon'
 import Day1 from '../pages/day1'
 import Day2 from '../pages/day2'
 import Day3 from '../pages/day3'
 import Day4 from '../pages/day4'
 import Day5 from '../pages/day5'
 import Day6 from '../pages/day6'
+import Day7 from '../pages/day7'
+import Day8 from '../pages/day8'
+import Day9 from '../pages/day9'
 
 const styles = StyleSheet.create({
   navTitle: {
@@ -22,12 +26,16 @@ const styles = StyleSheet.create({
 
 const HomeStack = createStackNavigator({
   Home: Home,
+  ComingSoon: ComingSoon,
   Day1: Day1,
   Day2: Day2,
   Day3: Day3,
   Day4: Day4,
   Day5: Day5,
-  Day6: Day6
+  Day6: Day6,
+  Day7: Day7,
+  Day8: Day8,
+  Day9: Day9
 }, {
   // initialRouteName: 'Day3',
   navigationOptions: ({ navigation }) => ({

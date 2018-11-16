@@ -13,6 +13,7 @@ import ScrollableTabView from 'react-native-scrollable-tab-view'
 
 const AnimatedIcon = Animated.createAnimatedComponent(Icon)
 
+// 开场动画
 class Entrance extends Component {
   constructor () {
     super()
@@ -69,7 +70,6 @@ class TwitterPost extends Component {
   }
 
   _onRefresh () {
-    console.log(123)
     this.setState({
       isRefreshing: true
     })
@@ -87,7 +87,7 @@ class TwitterPost extends Component {
   }
 
   _onScroll (e) {
-    console.log(e.nativeEvent.contentOffset.y)
+
   }
 
   render () {
@@ -96,7 +96,6 @@ class TwitterPost extends Component {
     })
     return (
       <ScrollView
-        style={{ marginBottom: 40 }}
         onScroll={ (e) => this._onScroll(e) }
         refreshControl={
           <RefreshControl
@@ -419,8 +418,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.01)'
   },
   twitterContainer: {
-    // width: Util.size.width,
-    // height: Util.size.height
     flex: 1
   },
   itemWrapper:{
