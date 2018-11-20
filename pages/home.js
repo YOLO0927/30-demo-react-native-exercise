@@ -100,7 +100,7 @@ export default class Home extends Component {
           size: 50,
           color:"#4285f4",
           hideNav: true,
-          complete: false
+          complete: true
         },
         {
           key:8,

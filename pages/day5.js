@@ -6,7 +6,7 @@ import MapView, { Marker } from 'react-native-maps'
 import Util from '../public/utils'
 import Icon from 'react-native-vector-icons/Ionicons'
 
-class Map extends Component {
+export class Map extends Component {
   constructor () {
     super()
     this.state = {
